@@ -1,0 +1,38 @@
+<br/>
+<div class="row">
+    <div class="col-md-12">
+        <a class="btn btn-primary" href="#/users/new">Create a contact</a>
+        <h3 class="user_color">External Contacts</h3>
+        <h5 class="user_sub_color">Select the client contacts associated with this offer</h5>
+        <br>
+        <table class="table table-striped">
+            <tr>
+                <th></th>
+                <th>Type</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Phone</th>
+                <th>Ext.</th>
+                <th>Fax</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+            <tr ng-hide="users.length" >
+                <td colspan="5">No contacts found, Please create one.</td>
+            </tr>
+            <tr ng-show="users.length" ng-repeat="user in users">
+                <td><input type="checkbox" name="tick"/></td>
+                <td>{{user.user_type}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.title}}</td>
+                <td>{{user.phone}}</td>
+                <td>{{user.ext}}</td>
+                <td>{{user.fax}}</td>
+                <td>{{user.email}}</td>
+                <td>
+                    <a href="#/users/{{user.id}}/edit">Edit</a> | <a href="" ng-click="deleteUser(user.id)">Remove</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
